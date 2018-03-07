@@ -14,5 +14,4 @@ class ClickbaitValidator < ActiveModel::Validator
       record.errors[:name] << "not a clickbait"
     end
   end
-  
 end
