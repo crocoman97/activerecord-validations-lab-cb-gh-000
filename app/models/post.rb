@@ -1,7 +1,6 @@
 class ClickbaitValidator < ActiveModel::Validator
-  
+  CLICKBAIT_PATTERNS = [ /Won't Believe/i, /Secret/i, /Top [0-9]*/i, /Guess/i]
   def validate(record)
-    CLICKBAIT_PATTERNS = [ /Won't Believe/i, /Secret/i, /Top [0-9]*/i, /Guess/i]
     unless CLICKBAIT_PATTERNS.include?(title)
       record.errors[:name] << "not a clickbait"
     end
