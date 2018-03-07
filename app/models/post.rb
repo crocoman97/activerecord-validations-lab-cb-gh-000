@@ -1,4 +1,5 @@
 class ClickbaitValidator < ActiveModel::Validator
+  include 
   CLICKBAIT_PATTERNS = [ /Won't Believe/i, /Secret/i, /Top [0-9]*/i, /Guess/i]
   def validate(record)
     unless CLICKBAIT_PATTERNS.include?(title)
